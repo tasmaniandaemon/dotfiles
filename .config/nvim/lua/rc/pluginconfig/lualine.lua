@@ -167,7 +167,7 @@ end
 
 local function get_terminal_status()
 	if vim.bo.buftype ~= "terminal" then
-		return ""
+		eturn ""
 	end
 	local status = terminal_status()
 	vim.api.nvim_command(
@@ -196,7 +196,7 @@ local my_extension = {
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "midnight",
+		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
