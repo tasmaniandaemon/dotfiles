@@ -78,7 +78,7 @@ local local_config = load_local_config("local")
 ---------------------------------------------------------------
 local config = {
 	font = wezterm.font("UDEV Gothic 35NFLG"),
-	font_size = 10,
+	font_size = 12,
 	check_for_updates = false,
 	use_ime = true,
 	ime_preedit_rendering = "Builtin",
