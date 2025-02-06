@@ -9,3 +9,4 @@ exec zsh
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
+export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:$XDG_DATA_DIRS
