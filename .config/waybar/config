@@ -53,6 +53,7 @@
     "states": {
       "warning": 25,
       "critical": 15
+      
     },
     // Connected to AC
     "format": " {icon}  {capacity}%", // Icon: bolt
