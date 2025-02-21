@@ -57,14 +57,7 @@
     // Connected to AC
     "format": " {icon}  {capacity}%", // Icon: bolt
     // Not connected to AC
-    "format-discharging": "{icon} {capacity}%",
-    "format-icons": [
-      "", // Icon: battery-full
-      "", // Icon: battery-three-quarters
-      "", // Icon: battery-half
-      "", // Icon: battery-quarter
-      "" // Icon: battery-empty
-    ],
+            
     "tooltip": true
   },
   "clock#time": {
@@ -107,7 +100,7 @@
   },
   "network": {
     "interval": 3,
-    "format-wifi": " {essid}", // Icon: wifi
+    "format-wifi": " {essid}", // Icon: wifi
     "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
