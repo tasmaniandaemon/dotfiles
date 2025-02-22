@@ -110,10 +110,7 @@ local plugins = {
 			{ "f3fora/cmp-spell" },
 			{ "yutkat/cmp-mocword" },
 			{ "saadparwaiz1/cmp_luasnip" },
-			{
-				"tzachar/cmp-tabnine",
-				build = "./install.sh",
-			},
+		
 			{ "ray-x/cmp-treesitter" },
 			{ "lukas-reineke/cmp-rg" },
 			{ "lukas-reineke/cmp-under-comparator" },
