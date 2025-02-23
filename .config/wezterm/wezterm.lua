@@ -97,7 +97,7 @@ local config = {
 	-- enable_wayland = false,
 
 
-	color_scheme = 'Ayu Dark (Gogh)',
+	color_scheme = 'Alabaster',
 	color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" },
 	hide_tab_bar_if_only_one_tab = false,
 	adjust_window_size_when_changing_font_size = false,
@@ -179,7 +179,7 @@ config.hyperlink_rules = {
 	-- Then handle URLs not wrapped in brackets
 	{
 		-- Before
-		--regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
+		--regex = '\\b\\w+://\\S+[ )/a-zA-Z0-9-]+',
 		--format = '$0',
 		-- After
 		regex = '[^(]\\b(\\w+://\\S+[)/a-zA-Z0-9-]+)',
