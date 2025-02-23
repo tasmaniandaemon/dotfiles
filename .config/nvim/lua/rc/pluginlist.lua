@@ -75,15 +75,14 @@ local plugins = {
 
 	--------------------------------
 	-- ColorScheme
-	{ 'dasupradyumna/midnight.nvim',                 lazy = false,      priority = 1000 },
-	-- Font
 	{
-		"kyazdani42/nvim-web-devicons",
-		enabled = function()
-			return not os.getenv("DISABLE_DEVICONS") or os.getenv("DISABLE_DEVICONS") == "false"
-		end,
-	},
-
+  "xero/miasma.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd("colorscheme miasma")
+  end,
+},
 	--------------------------------------------------------------
 	-- LSP & completion
 

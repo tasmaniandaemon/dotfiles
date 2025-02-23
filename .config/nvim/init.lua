@@ -24,7 +24,7 @@ require("rc/autocmd")
 vim.schedule(function()
 	load_my_plugins(vim.fn.stdpath("config") .. "/lua/rc/myplugins/opt")
 end)
-vim.cmd.colorscheme('midnight')
+vim.cmd.colorscheme('miasma')
 
 -- ===============================
 -- Local Configuration
