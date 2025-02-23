@@ -15,7 +15,7 @@ export ZDATADIR=$XDG_DATA_HOME/zsh
 export ZCACHEDIR=$XDG_CACHE_HOME/zsh
 
 setopt no_global_rcs
-
+PROMPT='%F{black}%~%f $ '
 typeset -fuz zkbd
 typeset -U path PATH manpath sudo_path
 typeset -xT SUDO_PATH sudo_path
