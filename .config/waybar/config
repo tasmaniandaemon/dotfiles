@@ -2,17 +2,16 @@
   // -------------------------------------------------------------------------
   // Global configuration
   // -------------------------------------------------------------------------
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "height": 26,
-  // "modules-left": ["wlr/workspaces", "custom/window"],
   "modules-left": [
-    "wlr/workspaces",
     "hyprland/workspaces"
   ],
   // "modules-center": ["custom/window"],
   "modules-right": [
     "custom/primary",
+    "custom/clipboard",
     "network",
     "idle_inhibitor",
     "cpu",
@@ -57,18 +56,25 @@
     // Connected to AC
     "format": " {icon}  {capacity}%", // Icon: bolt
     // Not connected to AC
-            
+    "format-discharging": "{icon} {capacity}%",
+    "format-icons": [
+      "", // Icon: battery-full
+      "", // Icon: battery-three-quarters
+      "", // Icon: battery-half
+      "", // Icon: battery-quarter
+      "" // Icon: battery-empty
+    ],
     "tooltip": true
   },
   "clock#time": {
     "interval": 1,
     "format": "{:%H:%M:%S}",
     "tooltip": false
-    // "timezone": "Europe/Athens"
+    // "timezone": "Europe/Warsaw"
   },
   "clock#date": {
     "interval": 10,
-    "format": "{:%Y/%m/%d(%a)}", // Icon: calendar-alt
+    "format": " {:%Y/%m/%d(%a)}", // Icon: calendar-alt
     "tooltip-format": "{:%Y %B %e (%A)}",
     "locale": "C.UTF-8"
     // "timezone": "Europe/Warsaw"
@@ -84,7 +90,9 @@
   "idle_inhibitor": {
     "format": "{icon} ",
     "format-icons": {
-         }
+      "activated": "",
+      "deactivated": ""
+    }
   },
   "memory": {
     "interval": 3,
@@ -100,7 +108,7 @@
   },
   "network": {
     "interval": 3,
-    "format-wifi": " {essid}", // Icon: wifi
+    "format-wifi": " {essid}", // Icon: wifi
     "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
@@ -110,9 +118,9 @@
     "format": "{icon}  {volume}%",
     "format-muted": " Muted", // Icon: volume-mute
     "format-icons": {
-      "headphones": " ", // Icon: headphones
-      "handsfree": " ", // Icon: headset
-      "headset": " ", // Icon: headset
+      "headphones": "", // Icon: headphones
+      "handsfree": "", // Icon: headset
+      "headset": "", // Icon: headset
       "phone": "", // Icon: phone
       "portable": "", // Icon: phone
       "car": "", // Icon: car
@@ -145,21 +153,14 @@
   // -------------------------------------------------------------------------
   // Custom Modules
   // -------------------------------------------------------------------------
-
-
-  "custom/dunst": {
-    "format": "{} ",
-    "exec": "~/.config/waybar/scripts/dunst.sh",
-    "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1
+  
+  "custom/pacman": {
+    "format": " {} updates available",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
+    "interval": 3600,
+    "on-click": "checkupdates; pkill -SIGRTMIN+8 waybar"
   },
- "custom/pacman": {
-  "format": " {} updates available",
-  "exec": "checkupdates | wc -l",
-  "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
-  "interval": 3600,
-  "on-click": "checkupdates; pkill -SIGRTMIN+8 waybar"
-},
   "custom/window": {
     "exec": "~/.config/waybar/scripts/window_title.sh",
     "interval": 1
