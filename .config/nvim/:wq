@@ -24,8 +24,10 @@ require("rc/autocmd")
 vim.schedule(function()
 	load_my_plugins(vim.fn.stdpath("config") .. "/lua/rc/myplugins/opt")
 end)
-vim.cmd.colorscheme('zenbones')
-vim.o.background = "light"
+vim.cmd.colorscheme('Zenbones')
+set background=light
+
+
 -- ===============================
 -- Local Configuration
 if vim.fn.filereadable(vim.fs.normalize("~/.nvim_local_init.lua")) ~= 0 then
