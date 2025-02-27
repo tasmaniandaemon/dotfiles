@@ -264,15 +264,7 @@ local plugins = {
 					require("telescope").load_extension("live_grep_args")
 				end,
 			},
-			{
-				"nvim-telescope/telescope-smart-history.nvim",
-				config = function()
-					require("telescope").load_extension("smart_history")
-				end,
-				build = function()
-					os.execute("mkdir -p " .. vim.fn.stdpath("state") .. "databases/")
-				end,
-			},
+		
 			{ "nvim-telescope/telescope-symbols.nvim" },
 			{
 				"debugloop/telescope-undo.nvim",
@@ -348,8 +340,7 @@ local plugins = {
 		end,
 		dependencies = {
 			{ "JoosepAlviste/nvim-ts-context-commentstring" },
-			{ "nvim-treesitter/nvim-treesitter-refactor" },
-			{ "nvim-treesitter/nvim-tree-docs" },
+			{ "nvim-treesitter/nvim-treesitter-refactor" },	
 			{ "yioneko/nvim-yati" },
 		},
 	},
@@ -367,13 +358,7 @@ local plugins = {
 	-- incremental-selection
 	-- { "RRethy/nvim-treesitter-textsubjects", after = { "nvim-treesitter" } },
 
-	{
-		"mfussenegger/nvim-treehopper",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/nvim-treehopper")
-		end,
-	},
+
 
 
 	--------------------------------
@@ -622,11 +607,7 @@ local plugins = {
 
 	----------------
 	-- Horizontal Move
-	{
-		"jinh0/eyeliner.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
+
 	{
 		"chrisgrieser/nvim-spider",
 		event = "VeryLazy",
@@ -658,31 +639,7 @@ local plugins = {
 
 	--------------------------------
 	-- Jump
-	{
-		"cbochs/portal.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/portal")
-		end,
-	},
-	{
-		"kwkarlwang/bufjump.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/bufjump")
-		end,
-	},
-	-- {
-	-- 	"wilfreddenton/history.nvim",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("rc/pluginconfig/history")
-	-- 	end,
-	-- },
-	-- not useful but cool
-	-- use {'nacro90/numb.nvim',
-	--  config = function() require'rc/pluginconfig/numb' end
-	-- }
+
 
 	--------------------------------
 	-- Scroll
@@ -712,11 +669,7 @@ local plugins = {
 		"RRethy/nvim-align",
 		cmd = { "Align" },
 	},
-	{
-		"yutkat/delete-word-to-chars.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
+
 
 
 
@@ -735,13 +688,7 @@ local plugins = {
 
 	--------------------------------
 	-- Yank
-	{
-		"hrsh7th/nvim-pasta",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/nvim-pasta")
-		end,
-	},
+
 	{
 		"AckslD/nvim-neoclip.lua",
 		event = "VeryLazy",
@@ -785,13 +732,6 @@ local plugins = {
 	-- 		require("rc/pluginconfig/nvim-hlslens")
 	-- 	end,
 	-- },
-	{
-		"rapan931/lasterisk.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/lasterisk")
-		end,
-	},
 	-- -> nvim-hlslens
 	-- {
 	-- 	"rapan931/utahraptor.nvim",
@@ -821,13 +761,7 @@ local plugins = {
 	-- Open
 	-- @Vim script
 	-- { "wsdjeg/vim-fetch", event = "VimEnter" },
-	{
-		"hrsh7th/nvim-gtd",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/nvim-gtd")
-		end,
-	},
+
 
 	--------------------------------
 	-- Buffer
@@ -882,24 +816,6 @@ local plugins = {
 
 	--------------------------------
 	-- Mark
-	{
-		"chentoast/marks.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/marks")
-		end,
-	},
-	-- can't jump to the file number
-	-- {
-	--   'ThePrimeagen/harpoon',
-	--   event = "VimEnter",
-	--   config = function() require 'rc/pluginconfig/harpoon' end
-	-- }
-	-- {
-	--   'brandoncc/telescope-harpoon.nvim',
-	--   event = "VimEnter",
-	--   config = function() require('telescope').load_extension('harpoon') end
-	-- }
 
 	--------------------------------
 	-- Fold
@@ -916,13 +832,7 @@ local plugins = {
 
 	--------------------------------
 	-- Manual
-	{
-		"lalitmee/browse.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/browse")
-		end,
-	},
+
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -978,13 +888,7 @@ local plugins = {
 		"ecthelionvi/NeoComposer.nvim",
 		config = true,
 	},
-	{
-		"tani/dmacro.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/dmacro")
-		end,
-	},
+
 
 
 	--------------------------------
@@ -1012,13 +916,7 @@ local plugins = {
 			vim.cmd("unabbreviate qa")
 		end,
 	},
-	{
-		"smjonas/live-command.nvim",
-		event = "CmdlineEnter",
-		config = function()
-			require("rc/pluginconfig/live-command")
-		end,
-	},
+
 
 	--------------------------------
 	-- Commandline
@@ -1036,14 +934,6 @@ local plugins = {
 	{
 		"dmitmel/cmp-cmdline-history",
 		event = "VimEnter"
-	},
-
-	--------------------------------
-	-- History
-	{
-		"yutkat/history-ignore.nvim",
-		event = "CmdlineEnter",
-		config = true,
 	},
 
 	--------------------------------
@@ -1154,14 +1044,8 @@ local plugins = {
 
 	--------------------------------
 	-- Writing assistant
-	{
-		"NMAC427/guess-indent.nvim",
-		-- event = { "BufReadPre", "BufWinEnter", "BufEnter", "VimEnter" },
-		lazy = false,
-		opts = true
-	},
-	-- { "zsugabubus/crazy8.nvim", event = { "BufNewFile", "BufReadPost" } },
-	-- NMAC427/guess-indent.nvim
+
+	
 	{
 		"rareitems/put_at_end.nvim",
 		event = { "VeryLazy" },
@@ -1228,13 +1112,7 @@ local plugins = {
 	-- https://github.com/theHamsta/nvim-treesitter-pairs/pull/8
 	-- { "theHamsta/nvim-treesitter-pairs", event = "VimEnter" },
 	-- do not work correnctly
-	{
-		"monkoose/matchparen.nvim",
-		event = "VimEnter",
-		config = function()
-			require("rc/pluginconfig/matchparen")
-		end,
-	},
+
 	{
 		"hrsh7th/nvim-insx",
 		event = "VimEnter",
@@ -1264,13 +1142,7 @@ local plugins = {
 
 	--------------------------------
 	-- Test
-	{
-		"klen/nvim-test",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/nvim-test")
-		end,
-	},
+
 	{
 		"michaelb/sniprun",
 		enabled = function()
@@ -1372,11 +1244,7 @@ local plugins = {
 	--------------------------------
 	-- Project
 	-- {'ygm2/rooter.nvim', event = "VimEnter"}
-	{
-		"notjedi/nvim-rooter.lua",
-		event = "BufEnter",
-		opts = true
-	},
+
 	{
 		"klen/nvim-config-local",
 		-- lazy = false,
@@ -1452,16 +1320,9 @@ local plugins = {
 			{
 				"nvim-telescope/telescope-dap.nvim",
 			},
-			{ "jbyuki/one-small-step-for-vimkind" },
-		},
+					},
 	},
-	{
-		"andrewferrier/debugprint.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("rc/pluginconfig/debugprint")
-		end,
-	},
+
 
 	--------------------------------
 	-- REPL
@@ -1564,10 +1425,7 @@ local plugins = {
 	-- do not customize K mapping
 	-- { "tjdevries/nlua.nvim", event = "VimEnter" },
 	-- { "tjdevries/manillua.nvim", event = "VimEnter" },
-	{
-		"bfredl/nvim-luadev",
-		event = "VimEnter"
-	},
+
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
