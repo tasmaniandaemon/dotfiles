@@ -631,11 +631,7 @@ local plugins = {
 	-- { "drybalka/tree-climber.nvim", event = "VimEnter" },
 
 	----------------
-	-- Word Move
-	{
-		"yutkat/wb-only-current-line.nvim",
-		event = "VeryLazy"
-	},
+
 
 	--------------------------------
 	-- Jump
@@ -904,11 +900,7 @@ local plugins = {
 			require("mkdir")
 		end,
 	},
-	{
-		"sQVe/sort.nvim",
-		cmd = { "Sort" }
-	},
-	{
+		{
 		"yutkat/confirm-quit.nvim",
 		event = "CmdlineEnter",
 		config = function()
@@ -945,11 +937,7 @@ local plugins = {
 			require("rc/pluginconfig/toggleterm")
 		end,
 	},
-	{
-		"yutkat/term-gf.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
+
 
 	--------------------------------
 	-- Backup/Swap
@@ -1268,7 +1256,6 @@ local plugins = {
 		event = "VeryLazy",
 		config = true,
 	},
-	{ "yutkat/convert-git-url.nvim", cmd = { "ConvertGitUrl" } },
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "VimEnter",
