@@ -47,8 +47,8 @@
 
 /* The whole bar */
 #waybar {
-  background-color: white; /* Sway palette: unfocused/background */
-  color: black; /* Sway palette: focused/text */
+  background-color: black; /* Sway palette: unfocused/background */
+  color: white; /* Sway palette: focused/text */
   font-family: JetBrains Mono ;
   font-size: 15px;
 }
